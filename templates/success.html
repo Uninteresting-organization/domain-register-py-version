@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <title>註冊成功</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container" style="text-align: center;">
+        <h1>🎉 註冊成功！</h1>
+        <p>用戶 ID: <b>{{ user_id }}</b></p>
+        <p>您請求的子網域 <b>{{ subdomain }}</b> 已開始處理。</p>
+        <p>目標指向地址：<b>{{ target }}</b></p>
+        
+        <div class="note">
+            <p>DNS 生效需要一些時間，請耐心等候！</p>
+        </div>
+        
+        <a href="{{ url_for('index') }}" class="register-button" style="display: inline-block; width: auto; margin-top: 20px;">返回登入頁面</a>
+    </div>
+</body>
+</html>
