@@ -1,0 +1,1 @@
+# domain-register-py-version
