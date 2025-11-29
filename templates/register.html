@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <title>子網域註冊服務</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>🚀 註冊您的專屬子網域</h1>
+        <p>您已使用 Discord 帳號 {{ user_id }} ({{ user_email }}) 登入。</p>
+
+        <form action="{{ url_for('submit_registration') }}" method="POST">
+            <div class="form-group">
+                <label for="subdomain">子網域名稱:</label>
+                <div class="subdomain-input-group">
+                    <input type="text" id="subdomain" name="subdomain" required 
+                           placeholder="輸入您想要的名稱" pattern="[a-zA-Z0-9-]+" 
+                           title="子網域只能包含英文字母、數字和連字號 (-)">
+                    <span class="domain-suffix">.您的主域名.com</span> 
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="target">指向的 IP 地址 / CNAME:</label>
+                <input type="text" id="target" name="target" required 
+                       placeholder="輸入目標 IP (例如: 192.168.1.1) 或 CNAME">
+                <small>這是您子網域將要指向的伺服器地址。</small>
+            </div>
+
+            <button type="submit" class="register-button">確認註冊子網域</button>
+
+            <div class="note">
+                <p>⚠️ 您的 Email ({{ user_email }}) 將用於通知和驗證。</p>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
