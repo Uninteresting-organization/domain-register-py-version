@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <title>Discord 登入 - 子網域註冊</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        .container { max-width: 400px; text-align: center; }
+        .discord-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #5865f2;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 16px;
+            margin-top: 20px;
+        }
+        .discord-button img { width: 24px; height: 24px; margin-right: 10px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔑 登入以註冊子網域</h1>
+        <p>請使用您的 Discord 帳號授權登入。</p>
+        
+        <a href="{{ discord_auth_url }}" class="discord-button">
+            <img src="{{ url_for('static', filename='discord_logo.svg') }}" alt="Discord Logo">
+            使用 Discord 登入
+        </a>
+    </div>
+</body>
+</html>
